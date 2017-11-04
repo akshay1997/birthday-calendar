@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_account_header" />
+
+    <PreferenceScreen
+        android:key="goToPreferences"
+        android:title="@string/pref_account_settings">
+
+        <!-- package relative class name -->
+        <intent
+            android:action="com.example.akshay.birthdayapp.settings.MAIN"
+            android:targetClass=".BaseActivity" />
+    </PreferenceScreen>
+
+</PreferenceScreen>
