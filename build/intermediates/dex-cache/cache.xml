@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/akshay/AndroidStudioProjects/BirthdayApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b5c6cdba68e20817f554c0574f9a66c564663440">
+        <dex dex="/home/akshay/AndroidStudioProjects/BirthdayApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ac361ce678afd96a1e065c110e8bd4506d17858f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/akshay/AndroidStudioProjects/BirthdayApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/akshay/AndroidStudioProjects/BirthdayApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ee0231f610af051078fb3a7b436b35b99c58a49e/classes.dex" />
+    </item>
+
+</items>
