@@ -37,7 +37,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+<<<<<<< HEAD
 import android.widget.RelativeLayout;
+=======
+>>>>>>> 4fcc0f19e8e34a804285aee9c17132d097b135aa
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -114,10 +117,19 @@ public class ReminderPreferenceCompat extends Preference {
     }
 
     private void click() {
+<<<<<<< HEAD
 
         //@SuppressLint("InflateParams")
         View view = inflater.inflate(R.layout.pref_reminder, null);
 
+=======
+        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        //@SuppressLint("InflateParams")
+        View view = inflater.inflate(R.layout.pref_reminder, null);
+        alert.setView(view);
+>>>>>>> 4fcc0f19e8e34a804285aee9c17132d097b135aa
 
         spinner = (Spinner) view.findViewById(R.id.pref_reminder_spinner);
         picker = (TimePicker) view.findViewById(R.id.pref_reminder_timepicker);
@@ -135,6 +147,7 @@ public class ReminderPreferenceCompat extends Preference {
         }
         Toast.makeText(context,"Hello1",Toast.LENGTH_SHORT);
         Log.d(TAG,"hello1");
+<<<<<<< HEAD
         tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
@@ -152,6 +165,32 @@ public class ReminderPreferenceCompat extends Preference {
         //bind();
 
         //alert.create().show();
+=======
+        alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Calendar cal = Calendar.getInstance();
+                //cal.set(picker.getCurrentHour(),picker.getCurrentMinute(),00);
+                Log.d(TAG,"hello2");
+                Toast.makeText(context,"Hello",Toast.LENGTH_SHORT).show();
+                cal.set (Calendar.HOUR_OF_DAY, picker.getHour());
+                cal.set (Calendar.MINUTE, picker.getMinute());
+                setAlarm(cal);
+                Log.d(TAG,"hello3");
+                //save(true);
+            }
+        });
+        alert.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        //bind();
+
+        alert.create().show();
+>>>>>>> 4fcc0f19e8e34a804285aee9c17132d097b135aa
     }
 
     private void bind() {
@@ -176,10 +215,17 @@ public class ReminderPreferenceCompat extends Preference {
     {
 
         Log.d(TAG,"a1");
+<<<<<<< HEAD
         Intent alarmintent = new Intent(ReminderPreferenceCompat.this,AlarmReceiver.class);
         PendingIntent sender = PendingIntent.getBroadcast(ReminderPreferenceCompat.this, 0, alarmintent, 0);
         Log.d(TAG, "a4");
         AlarmManager alarmManager = (AlarmManager) ReminderPreferenceCompat.this.getSystemService(ALARM_SERVICE);
+=======
+        Intent alarmintent = new Intent(getContext(),AlarmReceiver.class);
+        PendingIntent sender = PendingIntent.getBroadcast(getContext(), 0, alarmintent, 0);
+        Log.d(TAG,"a4");
+        AlarmManager alarmManager = (AlarmManager)getContext().getSystemService(ALARM_SERVICE);
+>>>>>>> 4fcc0f19e8e34a804285aee9c17132d097b135aa
         Log.d(TAG,"a2");
         alarmManager.set(AlarmManager.RTC, targetCal.getTimeInMillis(), sender);
         Log.d(TAG,"a3");
