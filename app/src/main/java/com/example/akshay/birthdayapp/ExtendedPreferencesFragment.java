@@ -55,7 +55,8 @@ public class ExtendedPreferencesFragment extends PreferenceFragmentCompat {
         reminderTime0.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                //reminderPreferenceCompat.onClick();
+                reminderPreferenceCompat.onClick();
+
 
                 return false;
             }
