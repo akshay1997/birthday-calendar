@@ -37,4 +37,5 @@ dependencies {
     compile 'com.android.support:preference-v7:23.0.1'
     compile 'com.pavelsikun:vintage-chroma:1.5'
     testCompile 'junit:junit:4.12'
+    compile 'com.pavelsikun:vintage-chroma:1.3'
 }
