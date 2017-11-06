@@ -57,7 +57,7 @@
             android:summary="@string/pref_reminder_time_summary"
             android:title="@string/pref_reminder_time2" />
     </android.support.v7.preference.PreferenceCategory>
-    <android.support.v7.preference.PreferenceCategory android:title="@string/pref_title">
+    <!--<android.support.v7.preference.PreferenceCategory android:title="@string/pref_title">
         <android.support.v7.preference.CheckBoxPreference
             android:defaultValue="@string/pref_title_enable_def"
             android:key="@string/pref_title_enable_key"
@@ -130,6 +130,7 @@
             android:persistent="true"
             android:title="@string/pref_title_custom_with_age" />
     </android.support.v7.preference.PreferenceCategory>
+    -->
     <android.support.v7.preference.PreferenceCategory android:title="@string/pref_advanced_category">
         <android.support.v7.preference.CheckBoxPreference
             android:defaultValue="@string/pref_advanced_def"

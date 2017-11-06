@@ -23,11 +23,17 @@ package com.example.akshay.birthdayapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
+import com.pavelsikun.vintagechroma.OnColorSelectedListener;
 
-public class ExtendedPreferencesFragment extends PreferenceFragmentCompat {
+import static com.example.akshay.birthdayapp.R.id.start;
+
+
+public class ExtendedPreferencesFragment extends PreferenceFragmentCompat implements OnColorSelectedListener{
+
     BaseActivity mActivity;
     private AccountHelper mAccountHelper;
     private ReminderPreferenceCompat reminderPreferenceCompat;
@@ -52,10 +58,36 @@ public class ExtendedPreferencesFragment extends PreferenceFragmentCompat {
             }
         });*/
         Preference reminderTime0 = findPreference(getString(R.string.pref_reminder_time_key0));
+        Preference reminderTime1 = findPreference(getString(R.string.pref_reminder_time_key1));
+        Preference reminderTime2 = findPreference(getString(R.string.pref_reminder_time_key2));
         reminderTime0.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                reminderPreferenceCompat.onClick();
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                        startActivity(intent);
+
+
+
+                return false;
+            }
+        });
+        reminderTime1.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                startActivity(intent);
+
+
+
+                return false;
+            }
+        });
+        reminderTime2.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                startActivity(intent);
+
 
 
                 return false;
@@ -79,4 +111,8 @@ public class ExtendedPreferencesFragment extends PreferenceFragmentCompat {
                 mActivity.mySharedPreferenceChangeListener);
     }
 
+    @Override
+    public void onColorSelected(@ColorInt int color) {
+
+    }
 }

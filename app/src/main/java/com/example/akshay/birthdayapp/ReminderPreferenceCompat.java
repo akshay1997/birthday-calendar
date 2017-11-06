@@ -38,6 +38,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TimePicker;
@@ -51,6 +52,7 @@ import static android.content.Context.ALARM_SERVICE;
 public class ReminderPreferenceCompat extends Preference {
     String TAG="ABC";
     private int lastMinutes = 0;
+    private LinearLayout ll;
     private TimePicker picker = null;
     private TimePicker tp = null;
     private Spinner spinner = null;
@@ -122,7 +124,7 @@ public class ReminderPreferenceCompat extends Preference {
         //@SuppressLint("InflateParams")
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.pref_reminder, null);
-
+        //ll.addView(view);
         spinner = (Spinner) view.findViewById(R.id.pref_reminder_spinner);
         picker = (TimePicker) view.findViewById(R.id.pref_reminder_timepicker);
         Toast.makeText(getContext(),"Hello0",Toast.LENGTH_SHORT).show();
@@ -141,7 +143,7 @@ public class ReminderPreferenceCompat extends Preference {
         Log.d(TAG,"hello1");
 
 
-        picker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+       /* picker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 Calendar cal = Calendar.getInstance();
@@ -154,7 +156,7 @@ public class ReminderPreferenceCompat extends Preference {
                 Log.d(TAG, "hello3");
                 //save(true);
             }
-        });
+        });*/
         //bind();
 
         //alert.create().show();
